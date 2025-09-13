@@ -13,7 +13,8 @@ Aplikasi ini adalah hasil dari sebuah eksperimen kolaboratif yang unik antara ke
 -   **Peran AI (Senior Frontend Engineer)**: Bertanggung jawab untuk menulis sebagian besar kode, merancang arsitektur komponen, mengimplementasikan fitur berdasarkan _prompt_, dan memastikan kualitas serta performa UI/UX. AI bertindak sebagai pengembang utama.
 -   **Peran Manusia (AI Projek)**: Bertindak sebagai _project manager_, konseptor, dan _quality assurance_. Manusia memberikan ide awal, arahan pengembangan melalui _prompt_ yang detail, melakukan pengujian, serta memandu visi dan tujuan akhir dari aplikasi.
 
-Kolaborasi ini menunjukkan bagaimana AI dapat menjadi alat yang kuat untuk mempercepat proses pengembangan perangkat lunak, sementara kreativitas dan arahan strategis dari manusia tetap menjadi kunci keberhasilan proyek.
+Kolaborasi ini menunjukkan bagaimana AI dapat menjadi alat yang kuat untuk mempercepat proses pengembangan perangkat
+lunak, sementara kreativitas dan arahan strategis dari manusia tetap menjadi kunci keberhasilan proyek.
 
 ---
 
