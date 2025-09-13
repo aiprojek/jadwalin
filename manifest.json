@@ -1,0 +1,22 @@
+{
+  "short_name": "Jadwalin",
+  "name": "Jadwalin - Smart Schedule Generator",
+  "description": "An intelligent school schedule generator application designed for mobile-first use. It automates the creation of class and exam schedules based on flexible constraints for teachers, subjects, and rooms, providing a clear, interactive, and exportable timetable.",
+  "icons": [
+    {
+      "src": "/jadwalin-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    },
+    {
+      "src": "/jadwalin-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#3b82f6",
+  "background_color": "#f3f4f6"
+}

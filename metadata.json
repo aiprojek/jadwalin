@@ -1,0 +1,5 @@
+{
+  "name": "Jadwalin",
+  "description": "An intelligent school schedule generator application designed for mobile-first use. It automates the creation of class and exam schedules based on flexible constraints for teachers, subjects, and rooms, providing a clear, interactive, and exportable timetable.",
+  "requestFramePermissions": []
+}

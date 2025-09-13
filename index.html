@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/jadwalin-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jadwalin - Smart Schedule Generator</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Generator jadwal sekolah cerdas untuk mengotomatiskan pembuatan jadwal pelajaran dan ujian berdasarkan batasan yang fleksibel. Mudah, interaktif, dan dapat diekspor." />
+    <meta name="keywords" content="schedule generator, school schedule, timetable generator, class schedule, exam schedule, jadwal sekolah, generator jadwal, otomatisasi jadwal, Jadwalin, AI Projek" />
+    <meta name="author" content="AI Projek" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:title" content="Jadwalin - Smart Schedule Generator" />
+    <meta property="og:description" content="Generator jadwal sekolah cerdas untuk mengotomatiskan pembuatan jadwal pelajaran dan ujian berdasarkan batasan yang fleksibel." />
+    <meta property="og:site_name" content="Jadwalin" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="/" />
+    <meta property="twitter:title" content="Jadwalin - Smart Schedule Generator" />
+    <meta property="twitter:description" content="Generator jadwal sekolah cerdas untuk mengotomatiskan pembuatan jadwal pelajaran dan ujian berdasarkan batasan yang fleksibel." />
+    
+    <!-- PWA Manifest & Theme -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#3b82f6" />
+    <link rel="apple-touch-icon" href="/jadwalin-icon.svg" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Explicitly configure Tailwind CSS after loading the script
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <!-- Chart.js library for analytical dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Added Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+      // Apply theme from localStorage on initial load, default to light
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0",
+    "@dnd-kit/core": "https://aistudiocdn.com/@dnd-kit/core@6.1.0",
+    "@dnd-kit/sortable": "https://aistudiocdn.com/@dnd-kit/sortable@7.0.2",
+    "@dnd-kit/utilities": "https://aistudiocdn.com/@dnd-kit/utilities@3.2.2"
+  }
+}
+</script>
+<style>
+      .schedule-table-focusable:hover .schedule-entry-item {
+        opacity: 0.25;
+        transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+      }
+      .schedule-table-focusable .schedule-entry-item:hover {
+        opacity: 1;
+        transform: scale(1.05);
+        z-index: 10;
+        position: relative; /* For z-index to work */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        background-color: var(--schedule-entry-hover-bg, white);
+      }
+      .dark .schedule-table-focusable .schedule-entry-item:hover {
+        background-color: var(--schedule-entry-hover-bg, #1f2937); /* Corresponds to dark:bg-gray-800 */
+      }
+      .schedule-table-focusable.compact-view .schedule-entry-item:hover {
+        transform: scale(1.1); /* A bit more pronounced in compact view */
+      }
+      /* Added for scrollable tabs */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+</head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
