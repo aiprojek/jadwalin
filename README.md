@@ -1,36 +1,19 @@
 # Jadwalin - Generator Jadwal Sekolah Cerdas
 
-Jadwalin adalah aplikasi web progresif (PWA) yang cerdas dan dirancang untuk penggunaan _offline-first_ pada perangkat mobile. Tujuan utamanya adalah untuk menyederhanakan tugas kompleks dalam membuat jadwal pelajaran dan ujian di sekolah, dengan secara otomatis menangani berbagai batasan seperti ketersediaan guru, alokasi ruangan, jam pelajaran, dan persyaratan mata pelajaran.
+Jadwalin adalah aplikasi web progresif (PWA) yang dirancang untuk penggunaan _offline-first_. Tujuan utamanya adalah untuk menyederhanakan tugas kompleks dalam membuat jadwal pelajaran dan ujian di sekolah, dengan secara otomatis menangani berbagai batasan seperti ketersediaan guru, alokasi ruangan, jam pelajaran, dan persyaratan mata pelajaran.
 
 Aplikasi ini bersifat _client-side_, artinya semua data (guru, kelas, jadwal, dll.) disimpan dengan aman di perangkat pengguna, memastikan privasi dan kecepatan akses tanpa ketergantungan pada koneksi internet setelah aplikasi dimuat pertama kali.
 
 ---
 
-## Kisah Pengembangan: Sebuah Kolaborasi
+## Disclaimer: Kolaborasi AI & Manusia
 
-Perjalanan aplikasi Jadwalin ini adalah contoh nyata dari kolaborasi antara Anda (pengguna) dan saya (asisten AI). Berikut adalah rekam jejak pengembangan kita:
+Aplikasi ini adalah hasil dari sebuah eksperimen kolaboratif yang unik antara kecerdasan buatan (AI) dan manusia.
 
-### Fase 1: Fondasi Awal dan Identifikasi Masalah
+-   **Peran AI (Senior Frontend Engineer)**: Bertanggung jawab untuk menulis sebagian besar kode, merancang arsitektur komponen, mengimplementasikan fitur berdasarkan _prompt_, dan memastikan kualitas serta performa UI/UX. AI bertindak sebagai pengembang utama.
+-   **Peran Manusia (AI Projek)**: Bertindak sebagai _project manager_, konseptor, dan _quality assurance_. Manusia memberikan ide awal, arahan pengembangan melalui _prompt_ yang detail, melakukan pengujian, serta memandu visi dan tujuan akhir dari aplikasi.
 
-Anda datang dengan sebuah fondasi kode yang solid untuk aplikasi Jadwalin. Namun, Anda menemukan sebuah masalah kritis: **"kenapa tombol tambah di setiap bagian manajemen data jadi tidak berfungsi?"**. Tombol "Tambah" untuk Jenjang, Guru, Mata Pelajaran, dan lainnya tidak merespons, yang menghambat fungsionalitas inti aplikasi.
-
-Peran saya pada tahap ini adalah sebagai seorang _debugger_ dan _engineer_. Setelah menganalisis file yang Anda berikan, saya mengidentifikasi bahwa file `App.tsx` tidak lengkap dan terpotong. Hal ini menyebabkan logika penting, terutama yang bertanggung jawab untuk menampilkan _modal_ (jendela pop-up) untuk menambah data, tidak ada. Kontribusi pertama saya adalah **memperbaiki dan melengkapi file `App.tsx`**, mengembalikan semua fungsionalitas yang hilang dan membuat tombol-tombol tersebut berfungsi kembali.
-
-### Fase 2: Panduan Menuju _Deployment_
-
-Setelah aplikasi kembali berfungsi, Anda mengajukan pertanyaan berikutnya: **"tanpa merubah file dan struktur yang ada. jelaskan kepadau cara deploy file ini secara local dan di cloudflare"**. Anda ingin tahu cara agar aplikasi ini bisa diakses, baik untuk pengujian di komputer lokal maupun untuk publikasi global melalui Cloudflare.
-
-Peran saya berkembang menjadi seorang _DevOps engineer_ dan mentor. Saya menjelaskan bahwa meskipun struktur proyek sudah modern, browser tidak bisa langsung membaca kode `.tsx`. Saya memberikan solusi praktis tanpa mengubah struktur proyek:
-
-1.  **Mengompilasi Kode**: Saya memberikan perintah `esbuild` untuk mengubah `index.tsx` menjadi file `index.js` standar yang bisa dibaca semua browser.
-2.  **Panduan _Deployment_ Lokal**: Saya menyediakan beberapa opsi mudah untuk menjalankan aplikasi di komputer lokal menggunakan VS Code Live Server, `npx serve`, dan server HTTP Python.
-3.  **Panduan _Deployment_ Cloudflare**: Saya memberikan dua metode komprehensif untuk _deployment_ di Cloudflare Pages: metode _drag-and-drop_ yang cepat dan metode integrasi Git yang profesional dan otomatis, lengkap dengan konfigurasi _build command_ yang diperlukan.
-
-### Fase 3: Dokumentasi Proyek (Tahap Saat Ini)
-
-Sebagai langkah akhir dalam siklus pengembangan ini, Anda meminta: **"buat file readme berisi penjelasan aplikasi ini dari awal hingga akhir termasuk keterlibatanmu dan aku dalam pengembangan aplikasi ini"**.
-
-Kini, peran saya adalah sebagai seorang _technical writer_. Saya menyusun file `README.md` ini untuk mendokumentasikan proyek secara menyeluruh, merangkum tujuan aplikasi, fitur-fiturnya, teknologi yang digunakan, dan yang terpenting, menceritakan kembali kisah kolaborasi kita dalam membangun dan menyempurnakan Jadwalin.
+Kolaborasi ini menunjukkan bagaimana AI dapat menjadi alat yang kuat untuk mempercepat proses pengembangan perangkat lunak, sementara kreativitas dan arahan strategis dari manusia tetap menjadi kunci keberhasilan proyek.
 
 ---
 
@@ -90,6 +73,55 @@ Untuk menjalankan aplikasi ini di komputer Anda, ikuti langkah-langkah berikut:
 
 ---
 
+## Panduan Pengguna
+
+Berikut adalah alur kerja yang direkomendasikan untuk menggunakan Jadwalin secara efektif.
+
+### Langkah 1: Manajemen Data
+
+Ini adalah fondasi dari jadwal Anda. Kualitas jadwal sangat bergantung pada keakuratan data yang Anda masukkan. Buka tab **Manajemen Data**.
+
+1.  **Jenjang Pendidikan**: Tambahkan semua jenjang yang ada di sekolah Anda (misal: SMP, SMA). Atur hari libur dan slot waktu (jam pelajaran & istirahat) untuk masing-masing jenjang.
+2.  **Mata Pelajaran**: Masukkan semua mata pelajaran dan kaitkan dengan jenjang yang sesuai.
+3.  **Ruangan**: Definisikan semua ruangan yang tersedia, termasuk laboratorium atau ruangan khusus lainnya.
+4.  **Guru**: Daftarkan semua guru, lalu atur hari ketersediaan mereka, jenjang tempat mereka mengajar, dan mata pelajaran yang mereka kuasai.
+5.  **Kelas**: Terakhir, buat semua kelas, kaitkan dengan jenjangnya, dan definisikan mata pelajaran yang diambil oleh kelas tersebut, lengkap dengan alokasi jam per minggu dan guru pengajarnya.
+
+### Langkah 2: Pembuatan Jadwal
+
+Setelah semua data lengkap, buka tab **Generator Jadwal**.
+
+1.  Pilih **Jenis Jadwal** (Reguler atau Ujian).
+2.  Pilih **Jenjang Pendidikan** yang ingin dibuatkan jadwalnya, atau gunakan tombol **Buat Jadwal Semua Jenjang** untuk proses gabungan.
+3.  Klik **Buat Jadwal**. Algoritma akan bekerja untuk menyusun jadwal terbaik berdasarkan batasan yang ada.
+4.  Jika diperlukan, Anda bisa membuat beberapa **Varian** untuk membandingkan hasil yang berbeda.
+
+### Langkah 3: Interaksi dan Penyempurnaan
+
+Jadwal yang dihasilkan dapat disesuaikan:
+
+-   **Drag & Drop**: Pindahkan sesi pelajaran ke slot waktu yang berbeda. Sistem akan memberikan peringatan jika terjadi konflik.
+-   **Cari Pengganti**: Klik pada sebuah sesi pelajaran untuk membuka fitur pencarian guru pengganti yang memenuhi syarat.
+-   **Ubah Tampilan**: Gunakan kontrol tampilan untuk melihat jadwal berdasarkan kelas, guru, atau ruangan. Anda juga bisa beralih ke **Tabel Induk** untuk melihat gambaran besar.
+
+### Langkah 4: Arsip dan Ekspor
+
+Setelah jadwal dirasa final, klik **Simpan Varian ini ke Arsip**.
+
+-   Di tab **Arsip Jadwal**, Anda dapat melihat semua jadwal yang telah disimpan.
+-   Dari sini, Anda bisa **Mencetak**, **Mengekspor ke HTML**, atau **Mengekspor ke CSV** untuk dibagikan atau diolah lebih lanjut.
+
+### Langkah 5: Pengaturan Aplikasi
+
+Di menu **Pengaturan**, Anda bisa:
+
+-   Mengatur **Informasi Lembaga** untuk ditampilkan di kop surat.
+-   Mengonfigurasi **Tahun Ajaran**.
+-   Menyesuaikan **Pengaturan Cetak** seperti ukuran kertas dan margin.
+-   Melakukan **Backup & Restore** seluruh data aplikasi. **Sangat disarankan untuk melakukan backup secara berkala!**
+
+---
+
 ## Struktur Proyek
 
 -   `index.html`: Titik masuk utama aplikasi web.
@@ -101,3 +133,32 @@ Untuk menjalankan aplikasi ini di komputer Anda, ikuti langkah-langkah berikut:
 -   `services/`: Direktori yang berisi modul-modul pembantu.
     -   `localScheduler.ts`: Algoritma _backtracking_ untuk pembuatan jadwal secara lokal.
     -   `exportStyles.ts`: Menyediakan style CSS untuk keperluan cetak dan ekspor.
+-   `README.md`: Dokumentasi proyek ini.
+
+---
+
+## ❤️ Dukungan & Komunitas
+
+Aplikasi ini tersedia secara gratis, apa adanya, _open-source_, dan terbuka untuk kolaborasi. Jika Anda merasa aplikasi ini bermanfaat, Anda bisa memberikan dukungan melalui beberapa cara:
+
+-   ☕ **[Donasi](https://lynk.id/aiprojek/s/bvBJvdA)**
+-   ⭐ **Memberi Bintang di GitHub**: Jika Anda menyukai proyek ini, berikan bintang ⭐ pada [repositori GitHub](https://github.com/aiprojek/jadwalin).
+-   💬 **Bergabung dengan Diskusi**: Punya pertanyaan, ide, atau ingin berbagi pengalaman? Gabung dengan [grup diskusi di Telegram](https://t.me/aiprojek_community/32).
+
+---
+
+## Kontribusi
+
+Kontribusi dari komunitas sangat kami hargai! Jika Anda ingin berkontribusi, berikut adalah beberapa cara yang bisa Anda lakukan:
+
+-   **Melaporkan Bug**: Temukan masalah? Buka _issue_ baru di [halaman Issues GitHub](https://github.com/aiprojek/jadwalin/issues).
+-   **Mengusulkan Fitur**: Punya ide untuk fitur baru? Sampaikan melalui _issue_ dengan label `enhancement`.
+-   **Mengirimkan Pull Request**: Jika Anda ingin memperbaiki bug atau menambahkan fitur, silakan buat _pull request_. Untuk perubahan besar, disarankan untuk membuka _issue_ terlebih dahulu untuk diskusi.
+
+Setiap bentuk kontribusi akan membantu Jadwalin menjadi lebih baik.
+
+---
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah **GNU General Public License v3.0**.
