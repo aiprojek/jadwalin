@@ -1,15 +1,34 @@
-const CACHE_NAME = 'jadwalin-cache-v1.0';
+
+const CACHE_NAME = 'jadwalin-cache-v1.1'; // Bump version
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
   '/jadwalin-icon.svg',
   '/index.tsx',
-  '/types.ts',
-  '/constants.ts',
-  '/services/localScheduler.ts',
-  '/services/exportStyles.ts',
-  '/services/geminiService.ts',
-  '/App.tsx',
+
+  // Core files in src
+  '/src/App.tsx',
+  '/src/types.ts',
+  '/src/constants.ts',
+  '/src/i18n.ts',
+  '/src/utils.ts',
+  
+  // Services
+  '/src/services/localScheduler.ts',
+  '/src/services/exportStyles.ts',
+  '/src/services/geminiService.ts',
+
+  // Components
+  '/src/components/common/index.tsx',
+  '/src/components/dashboard/index.tsx',
+  '/src/components/forms/index.tsx',
+  '/src/components/layout/Header.tsx',
+  '/src/components/modals/index.tsx',
+  '/src/components/schedule/ArchivedScheduleViewer.tsx',
+  '/src/components/schedule/index.tsx',
+  '/src/components/HelpAndAboutPage.tsx',
+
+  // CDNs
   'https://cdn.tailwindcss.com',
   'https://cdn.jsdelivr.net/npm/chart.js',
   'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css',
