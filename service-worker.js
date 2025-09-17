@@ -1,9 +1,11 @@
-
-const CACHE_NAME = 'jadwalin-cache-v1.1'; // Bump version
+const CACHE_NAME = 'jadwalin-cache-v1.2'; // Bump version
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
   '/jadwalin-icon.svg',
+  '/manifest.json', // Added for PWA completeness
+
+  // Root file
   '/index.tsx',
 
   // Core files in src
@@ -32,6 +34,8 @@ const URLS_TO_CACHE = [
   'https://cdn.tailwindcss.com',
   'https://cdn.jsdelivr.net/npm/chart.js',
   'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css',
+  'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2', // Added font file
+  'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff', // Added font file
   
   // From importmap
   "https://aistudiocdn.com/react@^19.1.1",
@@ -47,13 +51,13 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache');
-        const cachePromises = URLS_TO_CACHE.map(url => {
-            return cache.add(url).catch(err => {
-                console.warn(`Failed to cache ${url}:`, err);
-            });
-        });
-        return Promise.all(cachePromises);
+        console.log('Opened cache. Caching all assets for offline use.');
+        // Using addAll for an atomic cache operation.
+        // If any asset fails to cache, the service worker installation will fail and retry later.
+        return cache.addAll(URLS_TO_CACHE);
+      })
+      .catch(error => {
+        console.error('Failed to cache assets during install:', error);
       })
   );
   self.skipWaiting();
